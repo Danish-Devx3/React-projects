@@ -21,8 +21,7 @@ This is a simple Dice Game built with React and Vite. The game allows users to s
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/dice-game.git
-   cd dice-game
+   https://github.com/Danish-Devx3/React-projects.git
    ```
 
 ### Project Structure
