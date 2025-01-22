@@ -52,3 +52,28 @@ Dice-Game/
     tailwind.config.js
     vite.config.js
 ```
+
+# Todo-App
+
+This is a simple Todo application built with React and Vite. The application allows users to add, mark as completed, and delete tasks.
+
+## Features
+
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Danish-Devx3/React-projects.git
+   cd todo-app
