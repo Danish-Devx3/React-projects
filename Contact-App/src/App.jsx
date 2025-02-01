@@ -29,15 +29,35 @@ const App = () => {
     { name: "Rachel Carter", email: "rachelc@example.com" },
   ]);
   const [isAddContactOpen, setAddContactOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [searchVal, setSearchVal] = useState('')
 
   function handleAddContactModel(){
     setAddContactOpen((prev)=>!prev)
   }
 
+  console.log(contacts)
+  function handleSearching(e){
+    setSearchVal(e.target.value);
+
+    const filteredContacts = contacts.filter((contact)=>contact.name.includes(searchVal));
+    setContacts(filteredContacts)
+  }
+
+  useEffect(() => {
+    setContacts(localStorage.getItem('contacts'))
+  
+    return () => {
+      localStorage.setItem('contacts',contacts)
+    }
+  }, [contacts])
+  
+
   return (
     <>
       {isAddContactOpen ? (
-        <AddContact handleAddContactModel={handleAddContactModel} />
+        <AddContact name={name} setName={setName} email={email} setEmail={setEmail} setContacts={setContacts} handleAddContactModel={handleAddContactModel} />
       ) : (
         <div className="max-w-[370px] mx-auto">
           <Navbar />
@@ -45,13 +65,14 @@ const App = () => {
             <div className="flex relative items-center">
               <FiSearch className="text-white text-3xl absolute ml-1" />
               <input
+                onChange={handleSearching} value={searchVal}
                 className="h-10 flex-grow rounded-md border border-white bg-transparent pl-9 text-3xl text-white"
                 type="text"
               />
               <AiFillPlusCircle onClick={handleAddContactModel} className="absolute text-4xl cursor-pointer text-white right-1 " />
             </div>
           </div>
-          <ShowContact contacts={contacts} />
+          <ShowContact setName={setName} setEmail={setEmail} setContacts={setContacts} contacts={contacts} handleAddContactModel={handleAddContactModel} />
         </div>
       )}
     </>
