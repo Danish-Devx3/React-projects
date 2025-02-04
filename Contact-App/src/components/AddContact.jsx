@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 
-const AddContact = ({name, setName, email, setEmail, setContacts, handleAddContactModel}) => {
+const AddContact = ({contacts, name, setName, email, setEmail, setContacts, handleAddContactModel}) => {
 
   function AddContact(){
     if(name==''||email==''){
       console.log('Enter value first')
       return
     }
+
     setContacts((prev)=>[{name:name,email:email},...prev]);
     handleAddContactModel();
+    
   }
 
   
