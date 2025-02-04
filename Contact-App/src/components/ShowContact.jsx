@@ -21,12 +21,16 @@ const ShowContact = ({
     setEmail(con.email);
     handleAddContactModel();
 
+
     const filtered = contacts.filter((contact) => {
       return con != contact;
     });
 
     setContacts(filtered);
+    
   }
+
+  
 
   
 
@@ -35,7 +39,7 @@ const ShowContact = ({
       <h1 className="text-2xl">Contacts</h1>
       {contacts.map((contact) => {
         return (
-          <div className="bg-gray-400 flex justify-between items-center rounded-md p-5 mt-2">
+          <div className="bg-[#bdddfc] flex justify-between items-center rounded-md p-5 mt-2">
             <div className="flex items-center ">
               <FaUser className="text-3xl mr-3" />
               
