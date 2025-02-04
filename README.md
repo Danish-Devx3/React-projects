@@ -77,3 +77,32 @@ This is a simple Todo application built with React and Vite. The application all
    ```sh
    git clone https://github.com/Danish-Devx3/React-projects.git
    cd todo-app
+```
+
+# Contact-App
+
+This is a simple Contact application built with React and Vite. The application allows users to add, edit, search, and delete contacts. The contacts are stored in the browser's local storage.
+
+## Features
+
+- Add new contacts
+- Edit existing contacts
+- Search contacts by name
+- Delete contacts
+- Persist contacts using local storage
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Danish-Devx3/React-projects.git
+   cd Contact-App
+```
