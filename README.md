@@ -77,7 +77,7 @@ This is a simple Todo application built with React and Vite. The application all
    ```sh
    git clone https://github.com/Danish-Devx3/React-projects.git
    cd todo-app
-```
+
 
 # Contact-App
 
@@ -105,4 +105,3 @@ This is a simple Contact application built with React and Vite. The application 
    ```sh
    git clone https://github.com/Danish-Devx3/React-projects.git
    cd Contact-App
-```
