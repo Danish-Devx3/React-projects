@@ -7,6 +7,7 @@ const ShowContact = ({
   setEmail,
   setContacts,
   contacts,
+  filter
 }) => {
   function handleDelete(con) {
     const filtered = contacts.filter((contact) => {
@@ -35,35 +36,73 @@ const ShowContact = ({
   
 
   return (
-    <div className="overflow-scroll no-scrollbar h-[75vh] mt-5">
-      <h1 className="text-2xl">Contacts</h1>
-      {contacts.map((contact) => {
-        return (
-          <div className="bg-[#bdddfc] flex justify-between items-center rounded-md p-5 mt-2">
-            <div className="flex items-center ">
-              <FaUser className="text-3xl mr-3" />
-              
+    <>
+      {filter.length > 0 ? (<div className="overflow-scroll no-scrollbar h-[75vh] mt-5">
+      <h1 className="text-2xl font-bold text-white mb-4">Contacts</h1>
+      {filter.length === 0 ? (
+        <div className="text-white text-center mt-10">
+          <p className="text-xl">No contacts found</p>
+          <p className="text-sm opacity-75">Add new contacts to get started</p>
+        </div>
+      ) : (
+        filter.map((contact) => (
+          <div key={contact.email} className="bg-white/10 backdrop-blur-md flex justify-between items-center rounded-lg p-4 mt-3 transition-all hover:bg-white/20">
+            <div className="flex items-center">
+              <div className="bg-[#3498db] p-3 rounded-full mr-4">
+                <FaUser className="text-2xl text-white" />
+              </div>
               <div>
-              <h1 className="text-xl capitalize">{contact.name}</h1>
-              <h4 className="text-md">{contact.email}</h4>
+                <h1 className="text-xl font-semibold text-white capitalize">{contact.name}</h1>
+                <h4 className="text-sm text-gray-300">{contact.email}</h4>
               </div>
             </div>
-            <div className="flex gap-1">
+            <div className="flex gap-3">
               <FaRegEdit
                 onClick={() => handleEdit(contact)}
-                className="text-2xl cursor-pointer hover:scale-95"
+                className="text-2xl text-white cursor-pointer hover:text-[#3498db] transition-colors"
               />
               <AiOutlineDelete
-                onClick={() => {
-                  handleDelete(contact);
-                }}
-                className="text-2xl cursor-pointer hover:scale-95"
+                onClick={() => handleDelete(contact)}
+                className="text-2xl text-white cursor-pointer hover:text-red-500 transition-colors"
               />
             </div>
           </div>
-        );
-      })}
-    </div>
+        ))
+      )}
+    </div>) : (<div className="overflow-scroll no-scrollbar h-[75vh] mt-5">
+      <h1 className="text-2xl font-bold text-white mb-4">Contacts</h1>
+      {contacts.length === 0 ? (
+        <div className="text-white text-center mt-10">
+          <p className="text-xl">No contacts found</p>
+          <p className="text-sm opacity-75">Add new contacts to get started</p>
+        </div>
+      ) : (
+        contacts.map((contact) => (
+          <div key={contact.email} className="bg-white/10 backdrop-blur-md flex justify-between items-center rounded-lg p-4 mt-3 transition-all hover:bg-white/20">
+            <div className="flex items-center">
+              <div className="bg-[#3498db] p-3 rounded-full mr-4">
+                <FaUser className="text-2xl text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-semibold text-white capitalize">{contact.name}</h1>
+                <h4 className="text-sm text-gray-300">{contact.email}</h4>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <FaRegEdit
+                onClick={() => handleEdit(contact)}
+                className="text-2xl text-white cursor-pointer hover:text-[#3498db] transition-colors"
+              />
+              <AiOutlineDelete
+                onClick={() => handleDelete(contact)}
+                className="text-2xl text-white cursor-pointer hover:text-red-500 transition-colors"
+              />
+            </div>
+          </div>
+        ))
+      )}
+    </div>)}
+    </>
   );
 };
 

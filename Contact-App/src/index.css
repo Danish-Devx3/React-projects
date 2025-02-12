@@ -1,6 +1,10 @@
 @import "tailwindcss";
-body{
-    background-color: #6a89a7;
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    min-height: 100vh;
+    color: white;
+    font-family: 'Inter', sans-serif;
 }
 
 @layer utilities {
@@ -8,4 +12,12 @@ body{
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }

@@ -103,6 +103,5 @@ This is a simple Contact application built with React and Vite. The application 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Danish-Devx3/React-projects.git
-   cd Contact-App
-```
+   git clone https://github.com/your-username/contact-app.git
+   cd contact-app
