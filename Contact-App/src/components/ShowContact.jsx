@@ -30,7 +30,7 @@ const ShowContact = ({
     setContacts(filtered);
     
   }
-
+console.log(filter)
   
 
   
@@ -42,7 +42,6 @@ const ShowContact = ({
       {filter.length === 0 ? (
         <div className="text-white text-center mt-10">
           <p className="text-xl">No contacts found</p>
-          <p className="text-sm opacity-75">Add new contacts to get started</p>
         </div>
       ) : (
         filter.map((contact) => (

@@ -29,9 +29,12 @@ const App = () => {
 
   function handleSearching(e){
     setSearchVal(e.target.value);
-
+    
     const filteredContacts = contacts.filter((contact)=>contact.name.includes(searchVal));
     setFilter(filteredContacts);
+    if(e.target.value == ''){
+      setFilter([]);
+    }
   }
   
   
