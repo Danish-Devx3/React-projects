@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "tsc -w",
+    "watch": "tsc -b",
     "dev": "nodemon dist/index.js",
     "server": "concurrently \"npm run watch\" \"npm run dev\"",
     "start": "node dist/index.js"
