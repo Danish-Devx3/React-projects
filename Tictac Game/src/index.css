@@ -1,0 +1,16 @@
+body{
+    background-color: #4ba6b1b3;
+    font-family: cursive
+   
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.board-container{
+    width: 350px
+}
